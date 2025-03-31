@@ -29,7 +29,7 @@ function App() {
           {[...Array(80)].map((_, i) => (
             <motion.div
               key={i}
-              className="absolute bg-blue-400"
+              className="absolute bg-blue-400 rounded-full"
               style={{
                 width: "2px",
                 height: `${Math.random() * 30 + 25}px`,
@@ -66,7 +66,7 @@ function App() {
           {[...Array(50)].map((_, i) => (
             <motion.div
               key={i}
-              className="absolute w-[2px] h-[10px] bg-blue-400"
+              className="absolute w-[2px] h-[10px] bg-blue-400 rounded-full"
               style={{
                 width: "2px",
                 height: `${Math.random() * 30 +25}px`,
@@ -74,7 +74,10 @@ function App() {
                 top: `${Math.random() * 100}vh`,
               }}
               animate={{ y: "100vh" }}
-              transition={{ repeat: Infinity, duration: Math.random() * 1.5 + 0.5, ease: "linear" }}
+              transition={{ repeat: Infinity,
+                duration: Math.random() * 1.5 + 0.5,
+                ease: "linear"
+              }}
             />
           ))}
         </motion.div>
@@ -101,6 +104,32 @@ function App() {
               }}
               transition={{
                 duration: Math.random() * 5 + 5,
+                repeat: Infinity,
+                ease: "linear"
+              }}
+            />
+          ))}
+        </motion.div>
+      );
+    }
+
+    // On case of fog in description, show fog effect
+    if (palabras.some(p => p.includes("niebla")) || palabras.some(p => p.includes("neblina"))) {
+      return (
+        <motion.div className="absolute top-0 left-0 w-full h-full pointer-events-none overflow-hidden">
+          {[...Array(25)].map((_, i) => (
+            <motion.div
+              key={i}
+              className="absolute bg-gray-300 rounded-full opacity-15"
+              style={{
+                width: `${Math.random() * 300 + 84}px`,
+                height: `${Math.random() * 12 + 8}px`,
+                left: `${Math.random() * 100}vw`,
+                top: `${Math.random() * 100}vh`
+              }}
+              animate={{ x: ["0vw", "20vw", "10vw", "-10vw", "0vw"], y: ["0vh", "5vh", "-5vh", "3vh", "0vh"] }}
+              transition={{
+                duration: Math.random() * 20 + 10,
                 repeat: Infinity,
                 ease: "linear"
               }}
