@@ -66,7 +66,7 @@ function App() {
           {[...Array(50)].map((_, i) => (
             <motion.div
               key={i}
-              className="absolute w-[2px] h-[10px] bg-blue-400 rounded-full"
+              className="absolute bg-blue-400 rounded-full"
               style={{
                 width: "2px",
                 height: `${Math.random() * 30 +25}px`,
@@ -155,9 +155,9 @@ function App() {
               key={i}
               className="absolute bg-white rounded-full opacity-50"
               style={{
-                width: `${Math.random() * 18 + 14}px`,
+                width: `${Math.random() * 24 + 20}px`,
                 height: `${Math.random() * 8 + 4}px`,
-                left: `${Math.random() * 100}vw`,
+                left: `${Math.random() * 90}vw`,
                 top: `${Math.random() * 100}vh`
               }}
               animate={{ x: ["0vw", "150vw"] }}
