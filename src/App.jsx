@@ -5,7 +5,7 @@ import WeatherInfo from "./components/weather-info";
 import NotFound from "./components/not-found";
 import SearchForm from "./components/search-form";
 import { motion } from "framer-motion";
-import Comments from "./comments";
+import Comments from "./Comments";
 
 
 function App() {
